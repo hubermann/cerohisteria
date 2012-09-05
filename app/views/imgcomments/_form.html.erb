@@ -1,0 +1,33 @@
+<%= form_for(@imgcomment) do |f| %>
+  <% if @imgcomment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@imgcomment.errors.count, "error") %> prohibited this imgcomment from being saved:</h2>
+
+      <ul>
+      <% @imgcomment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :nickname %><br />
+    <%= f.text_field :nickname %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </div>
+  <div class="field">
+    <%= f.label :image_id %><br />
+    <%= f.number_field :image_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

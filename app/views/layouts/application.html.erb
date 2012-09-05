@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><%= @meta_title %> Cero Histeria </title>
+<%= stylesheet_link_tag    "application", :media => "all" %>
+<%= javascript_include_tag "application" %>
+<%= javascript_include_tag  'jquery.validate.min', 'application' %>
+<%= csrf_meta_tags %>
+
+<meta name="keywords" content="<%= @meta_keywords %>" />
+<meta name="description" content="<%= @meta_description %>" />
+
+
+</head>
+<body>
+  <header class="block">
+
+		<div class="one_3">
+			<a href="/"><h1>SlimGrid</h1></a>
+			<a href="/"><p>This a example, you know</p></a>
+		</div>
+
+		<div class="two_3">
+			<% if admin? %>
+			 <div id="notice"><p>Logged in as admin <%= link_to 'Logout', logout_path %></p></div>
+			<% end %>
+			<nav>
+				<ul>
+					<li><a href="/">Inicio</a></li>
+					<li><a href="/recomendados">Recomendados</a></li>
+					<li><a href="/categorias">categorias</a></li>
+
+				</ul>
+			</nav>
+		</div>
+  </header>
+	
+	
+	
+<div id="wrapper" class="block">
+
+
+<div class="block">
+	<!-- aside -->
+	<aside class="one_3">
+	<%= render "shared/sidebar" %>
+	
+	</aside>
+	<!-- end aside -->
+	<div class="col_two_3">
+
+		<%= yield %>
+		
+	</div>
+</div>
+
+	
+
+</div> <!-- end wrapper -->
+
+<footer>
+	<div class="block">
+	<div class="half">
+		<h3>Footer</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. </p>
+	</div>	
+
+	<div class="half">
+		<h3>Footer</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. </p>
+	</div>
+	</div>	
+</footer>
+
+
+</body>
+</html>

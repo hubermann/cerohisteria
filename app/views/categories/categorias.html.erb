@@ -1,0 +1,8 @@
+<% for category in @categories %>
+  <strong><%= category.name %></strong>
+  <ul>
+    <% for post in category.posts %>
+      <li><%= post.title %></li>
+    <% end %>
+  </ul>
+<% end %>

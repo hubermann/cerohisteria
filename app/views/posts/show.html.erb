@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<article>
+	<h1><%= @post.title %></h1>
+	<p>
+	  <span class="categoryname"><%= link_to @post.category.name, categoria_path(@post.category.slug,@post.category.id) %></span>
+	  <span class="timepost"><%= distance_of_time_in_words(Time.now, @post.created_at).capitalize %></span>
+		
+	</p>
+	<p><%= @post.body %></p>
+	<!-- images -->
+
+	<% bringimages(@post.id) %>
+
+	<% @images.each do |image|%>
+	<img src="data:image;base64,<%= image.filename %>" title="<%= image.title %>" class="auto-image"/>
+	<% end %>
+	<p>
+	  <%= @post.keywords %>
+	</p>
+
+	
+	<div id="author">
+	<div class="inside">
+	<img alt="avatar" title="<%= @post.author.nickname %>" src="data:image/jpg;base64,<%= @post.author.avatar %>" width="120" />
+	<div class="authorinfo">
+		<h3>Autor: <%= @post.author.nickname %></h3>
+		<p><%= @post.author.description %></p>
+	</div>
+
+	</div>
+	</div>
+	<% if admin? %>
+	<%= link_to 'Edit', edit_post_path(@post) %> |
+	<%= link_to 'Back', posts_path %>
+	<% end %>
+</article>
+<div id="comments">
+<h3>Comentarios</h3>
+
+<p><%= link_to 'Comentar', new_post_comment_path(@post) %></p>
+
+
+<%= render :partial => 'comments/comment', :collection => @post.comments %>
+
+
+
+</div>
+
+
+
+
+
+
+
+

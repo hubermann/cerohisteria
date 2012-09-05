@@ -1,0 +1,30 @@
+<h1>Listing authors</h1>
+
+<table>
+  <tr>
+    <th>Nickname</th>
+    <th>Description</th>
+    <th>Avatar</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @authors.each do |author| %>
+  <tr>
+    <td><%= author.nickname %></td>
+    <td><%= author.description %></td>
+    <td><img alt="avatar" src="data:image;base64,<%= author.avatar %>" width="150" /></td>
+    <td><%= link_to 'Show', author %></td>
+	<% if admin? %>
+    <td><%= link_to 'Edit', edit_author_path(author) %></td>
+    <td><%= link_to 'Destroy', author, confirm: 'Are you sure?', method: :delete %></td>
+	<% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<% if admin? %>
+<%= link_to 'New Author', new_author_path %>
+<% end %>

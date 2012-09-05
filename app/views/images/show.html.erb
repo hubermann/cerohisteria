@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Filename:</b>
+  
+<img src="data:image;base64,<%= @image.filename %>" alt="<%= @image.title %>" />
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @image.title %>
+</p>
+
+<p>
+  <b>Keywords:</b>
+  <%= @image.keywords %>
+</p>
+
+<p>
+  <b>Post:</b>
+  <%= @image.post_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Back', images_path %>

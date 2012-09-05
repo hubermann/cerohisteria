@@ -1,0 +1,41 @@
+<% @posts.each do |post| %>
+<article>
+	<div class="full"><h2><%= link_to post.title, viewpost_path(post.slug,post.id) %></h2></div>
+	<% if post.mainimg != nil%>
+	<div class="one_3">
+	<% else %>
+	<div class="col_three_4">
+	<% end %>	
+		<% if post.mainimg != nil%>
+	
+		<% bringmainimg(post.mainimg) %>
+		<div class="thumbindex">
+		<img src="data:image;base64,<%= @image_file %>" title="<%= @image_title %>" class="auto-image"/>
+		</div>
+		<% end %>
+		<% if admin? %>
+		<p>
+			
+		<%= link_to 'Edit', edit_post_path(post), :class => 'adminlink'%>
+		<%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete, :class => 'adminlink'%>
+<%= link_to '+ Imagen', image_new_path(post.id), :class => 'adminlink' %>			
+		
+		</p>
+		<% end %>
+		
+		
+		<% if post.mainimg != nil%>
+		</div>
+		<div class="one_3">
+		<% end %>
+		<p>Autor:<%= post.author.nickname %> </p>
+	
+		<p><%= truncate(post.body, :length => 400) %></p>
+
+		
+	</div>
+</article>
+<% end %>
+<% if admin? %>
+<%= link_to 'New Post', new_post_path, :class => 'adminlink' %>
+<% end %>

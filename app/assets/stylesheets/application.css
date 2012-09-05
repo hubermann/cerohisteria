@@ -1,0 +1,54 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+
+	html,body{height:100%; background: url(bg-body.jpg) repeat-x;}
+	
+	#wrapper {min-height:550px; position:relative; }
+	#wrapper{margin-bottom:40px;}
+
+	footer{ background: #293038; overflow:hidden; }
+	header h1, header p{color:#FFF;}
+	footer h3, footer p{color:#FFF;}
+
+
+	article .full h2{color:#293038; float:left;}
+	article p{text-align:justify;}
+	.viewmore{background:#d4246d; color:#FFF; padding:3px 5px; float:right; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
+	.viewmore:hover{text-decoration:none;}
+	.adminlink{background:#91ed87; color:#2f7306; padding:3px 5px; margin:5px 0; float:left; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
+	.field{width:98%; float:left; margin-top:5px;}
+	input, textarea{float:left; width:97%; padding:5px;}
+	.field label{margin-top:5px; font-weight:bold; }
+	.red{background:red}
+	.thumbindex{width:100%; height:280px; overflow:hidden;}
+	
+	#author{width:100%;float:left; background:#293038; margin:0;}
+	#author img{float:left; border:1px solid #6a6a6a;}
+	.authorinfo{float:left; margin: 0 0 0 10px; color:#FFF}
+	.inside{padding:8px 5px; float:left}
+	a:hover{text-decoration:none;}
+	.datecomment{color:#CCC; line-height:5px; font-size:.85em}
+	.timepost{color:#CCC; line-height:5px; font-size:.85em}
+	.categoryname{color:#d4246d; }
+	.comment{border-bottom:1px solid #e2e2e2;}
+	.commentuser{color:#d4246d; font-weight:bold;}
+	#error_explanation li{color:#c4c959;}
+	.new_comment label{font-weight:bold; margin-top:5px; }
+	.new_comment button{padding:8px; background:#c60059; margin: 5px 0; color:#FFF; border:none; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
+	.new_comment button:hover{background:#ef4e91}
+	a{ color:#c60059; }
+	a:hover{color:#293038; text-decoration:none;}
+	input, textarea{background:#e0e0e0; border:1px solid #c6c6c6;}
+	.small{font-size:small}
+

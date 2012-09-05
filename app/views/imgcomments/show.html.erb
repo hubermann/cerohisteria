@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Email:</b>
+  <%= @imgcomment.email %>
+</p>
+
+<p>
+  <b>Nickname:</b>
+  <%= @imgcomment.nickname %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @imgcomment.body %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @imgcomment.image_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_imgcomment_path(@imgcomment) %> |
+<%= link_to 'Back', imgcomments_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  filename: MyString
+  title: MyString
+  keywords: MyString
+  post_id: 1
+
+two:
+  filename: MyString
+  title: MyString
+  keywords: MyString
+  post_id: 1

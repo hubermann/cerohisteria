@@ -1,0 +1,29 @@
+<h1>Listing images</h1>
+
+<table>
+  <tr>
+    <th>Filename</th>
+    <th>Title</th>
+    <th>Keywords</th>
+    <th>Post</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @images.each do |image| %>
+  <tr>
+    <td><img src="data:image;base64,<%= image.filename %>" alt="<%= image.title %>" width="120"/></td>
+    <td><%= image.title %></td>
+    <td><%= image.keywords %></td>
+    <td><%= image.post_id %></td>
+    <td><%= link_to 'Show', image %></td>
+    <td><%= link_to 'Edit', edit_image_path(image) %></td>
+    <td><%= link_to 'Destroy', image, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Image', new_image_path %>

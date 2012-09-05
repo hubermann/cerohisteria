@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nickname:</b>
+  <%= @author.nickname %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @author.description %>
+</p>
+
+<p>
+<img alt="avatar" src="data:image/jpg;base64,<%= @author.avatar %>" width="150" />
+</p>
+
+<% if admin? %>
+<%= link_to 'Edit', edit_author_path(@author) %> |
+<%= link_to 'Back', authors_path %>
+<% end %>

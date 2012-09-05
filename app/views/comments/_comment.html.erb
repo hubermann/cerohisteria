@@ -1,0 +1,18 @@
+<div class="comment">
+<p class="commentuser"><%= comment.nickname %></p>
+<p class="datecomment">Publicado: <%= distance_of_time_in_words(Time.now,comment.created_at) %></p>
+<p><%= simple_format h(comment.body) %></p>
+<p><%= link_to 'Destroy', comment,
+    :confirm => 'Are you sure?',
+    :method => :delete if admin? %></p>
+<p><% link_to 'Responder a ' + comment.nickname, new_comment_comment_path(comment), :class => "link_gray small" %></p>
+</div>
+
+
+
+
+<% unless comment.comments.empty? %>
+    <%= render :partial => 'comments/comment', :collection => comment.comments %>
+<% end %>
+
+

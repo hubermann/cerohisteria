@@ -1,0 +1,29 @@
+<h1>Listing imgcomments</h1>
+
+<table>
+  <tr>
+    <th>Email</th>
+    <th>Nickname</th>
+    <th>Body</th>
+    <th>Image</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @imgcomments.each do |imgcomment| %>
+  <tr>
+    <td><%= imgcomment.email %></td>
+    <td><%= imgcomment.nickname %></td>
+    <td><%= imgcomment.body %></td>
+    <td><%= imgcomment.image_id %></td>
+    <td><%= link_to 'Show', imgcomment %></td>
+    <td><%= link_to 'Edit', edit_imgcomment_path(imgcomment) %></td>
+    <td><%= link_to 'Destroy', imgcomment, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Imgcomment', new_imgcomment_path %>

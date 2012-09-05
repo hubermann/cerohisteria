@@ -1,0 +1,30 @@
+<h1>Listing categories</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Slug</th>
+    <th>Avatar</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @categories.each do |category| %>
+  <tr>
+    <td><img alt="avatar" src="data:image;base64,<%= category.avatar %>" width="150" /></td>
+    <td><%= category.slug %></td>
+    <td><%= category.name %></td>
+    <td><%= link_to 'Show', category %></td>
+	<% if admin? %>
+    <td><%= link_to 'Edit', edit_category_path(category) %></td>
+    <td><%= link_to 'Destroy', category, confirm: 'Are you sure?', method: :delete %></td>
+	<% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<% if admin? %>
+<%= link_to 'New Category', new_category_path %>
+<% end %>
