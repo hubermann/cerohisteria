@@ -7,8 +7,8 @@ class ApplicationController < ActionController::Base
 
    def meta_defaults
       @meta_title = ""
-      @meta_keywords = "parejas, cuernos, recomendaciones para hombres,recomendaciones para mujeres, sexo "
-      @meta_description = "recomendaciones para hombres y mujeres sobre relaciones."
+      @meta_keywords = ""
+      @meta_description = ""
     end
     
     
