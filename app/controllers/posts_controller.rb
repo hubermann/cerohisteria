@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   before_filter :authorize, :except => [:index, :show, :recomendados,:aside_recomendados, :categoria]
+  helper_method :aside_recomendados
   # GET /posts
   # GET /posts.json
   def index

@@ -1,7 +1,5 @@
 <h3>Mas Recomendados</h3>
 
-
-
 <% @recomendados.each do |post| %>
 <article>
 	<div class="full"><h2><%= link_to post.title, viewpost_path(post.slug,post.id) %></h2></div>
