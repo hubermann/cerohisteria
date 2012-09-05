@@ -1,4 +1,4 @@
-<% aside_recomendados.each do |post| %>
-	<p><%= post.title %></p>
+<% @aside_recomendados.each do |post| %>
+	<li><%= link_to post.title, viewpost_path(post.slug,post.id) %></li>
 <% end %>
 

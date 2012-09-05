@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :admin?
   
-  before_filter :meta_defaults
+  before_filter :meta_defaults,:load_sidebar
     private
 
    def meta_defaults
@@ -10,13 +10,18 @@ class ApplicationController < ActionController::Base
       @meta_keywords = ""
       @meta_description = ""
     end
-    
+  
+
+
+    def load_sidebar
+        @aside_recomendados = Post.where(:recomended =>true)
+    end
     
   
     protected
 
     def admin?
-    session[:password] == '*******'
+    session[:password] == '******'
     end
 
     def authorize
